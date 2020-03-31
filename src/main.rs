@@ -1,37 +1,36 @@
-use std::io;
-use std::cmp::Ordering;
-use rand::Rng;
-
 fn main() {
-    let secret_number = rand::thread_rng().gen_range(1, 101);
+    // variables in rust are immutable by default
+    let x = 6;
+    println!("The value of x is: {}", x);
 
-    println!("Guess the number!");
+    // this wont compile
+    // x = 5;
+    // println!("The value of x is: {}", x);
 
-    loop {
-        println!("Please input your guess.");
+    let mut y = 5;
+    println!("The value of y is: {}", y);
 
-        let mut guess = String::new();
+    y = 6;
+    println!("The value of y is: {}", y);
 
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read input.");
+    // constants in rust must use `const` and the pattern is to name it
+    // in uppercase with underscores for spaces for both names and values
+    const MAX_POINTS: u32 = 100_000;
+    println!("The value of MAX_POINTS: {}", MAX_POINTS);
 
-        let guess: u32 = match guess
-            .trim()
-            .parse() {
-                Ok(num) => num,
-                Err(_) => continue,
-            };
+    // shadowing is when we reassign a variable with a new value, shadowing
+    // its name within the scope of the function
+    let j = 6;
+    let j = j + 1;
+    let j = j * 2;
+    println!("The value of j is: {}", j);
 
-        println!("You guessed: {}", guess);
+    // we can also change the type of a variable with shadowing but not mut
+    let spaces = "   ";
+    let spaces = spaces.len();
+    println!("The value of spaces is: {}", spaces);
 
-        match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
-            Ordering::Equal => {
-                println!("You win!");
-                break;
-            },
-        }
-    }
+    // this wont compile since the type changes
+    // let mut spaces = "   ";
+    // spaces = spaces.len()
 }
