@@ -33,4 +33,15 @@ fn main() {
     // this wont compile since the type changes
     // let mut spaces = "   ";
     // spaces = spaces.len()
+
+    // the scalar type values that exist in rust are integers, floating-point
+    // numbers, booleans and characters
+
+    // integers can range signed and unsigned from 8 to 128 bits
+    // they can also have prefixs for different bases
+    // e.g. 0xff for hex
+    // e.g. 0o77 for octal
+    // e.g. 0b1111_0000 for binary
+
+
 }
