@@ -44,4 +44,29 @@ fn main() {
     // e.g. 0b1111_0000 for binary
 
 
+    // there are two types of floating point number, 32 and 64 bit
+    // let x = 2.0
+    // let y: f32 = 3.0
+
+    // all basic operations are supported
+    let sum = 1 + 2;
+    let difference = 5 - 2;
+    let product = 3 * 10;
+    let quotient = 10.5 / 1.5;
+    let remainder = 10 % 5;
+
+    println!("Math products: {} {} {} {} {}", sum, difference, product, quotient, remainder);
+
+    let thing = true;
+    let other: bool = false;
+
+    println!("Boolean values: {} {}", thing, other);
+
+    // char literals
+
+    let eh = 'a';
+    let be = 'b';
+    let emoji = '👀';
+
+    println!("Character literals: {} {} {}", eh, be, emoji);
 }
